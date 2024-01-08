@@ -4,13 +4,11 @@ return {
   ft = { 'rust' },
   config =function ()
     vim.g.rustaceanvim = {
-      -- Plugin configuration
       tools = {
         hover_actions = {
           auto_focus = true,
         },
       },
-      -- LSP configuration
       server = {
         capabilities = require("cmp_nvim_lsp").default_capabilities(),
         on_attach = function(_, bufnr)
@@ -18,13 +16,9 @@ return {
         vim.keymap.set("n", "<leader>k", function() vim.cmd.RustLsp({'hover', 'actions'}) end, {silent = true, buffer = bufnr})
         end,
         settings = {
-          -- rust-analyzer language server configuration
           ['rust-analyzer'] = {
           },
         },
-      },
-      -- DAP configuration
-      dap = {
       },
   }
   end
